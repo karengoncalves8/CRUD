@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(238, 238, 238);
+}
+
+nav {
+    display: flex;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(28, 27, 29);
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+nav .logo {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 5px;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+nav ul li a.active {
+    background-color: rgb(40, 133, 71);
+}
+nav ul li a:hover{
+    background-color: rgb(58, 199, 105);
+}
+nav .menu-btn i {
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media(max-width: 920px) {
+    nav .menu-btn i {
+        display: block;
+        color: white;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 9.8%;
+        left: -100%;
+        background-color: rgb(28, 27, 29);
+        height: 100vh;
+        width: 50%;
+        text-align: center;
+        display: block;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+
+    nav ul.open {
+        left: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        margin: 50px 0;
+    }
+
+    nav ul li a {
+        font-size: 23px;
+    }
+
+    nav ul li a.active,
+    nav ul li a:hover {
+        background: none;
+        color: rgb(40, 133, 71);
+    }
+}
+
+main {
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* STYLE DO INDEX */
+.content{
+    height: 50vh;
+    width: 65vw;
+    display: flex;
+    gap: 3rem;
+}
+
+.content h1, .btn{
+    animation: show 0.8s ease-out;
+}
+.content-main {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.content-main p, .content img{
+    animation: appear 1s ease-in-out;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: flex;
+    gap: 3rem;
+}
+
+.btn button {
+    border: none;
+    background-color: rgb(40, 133, 71);
+    padding: 10px 15px;
+    border-radius: 3px;
+    color: white;
+}
+
+.btn button:hover{
+    background-color: rgb(58, 199, 105);
+    transform: scale(1.1);
+    transition: background 0.2s ease-in;
+}
+
+.btn a {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+
+
+.content img{
+    width: 400px;
+    height: 500px;
+    align-self: center;
+}
+
+@media (max-width: 920px) {
+    .content img{
+        width: 0;
+        height: 0;
+    }
+}
+
+/* STYLE DO NOVO USUÁRIO */
+form {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form h1{
+    margin-top: 1rem;
+    animation: show 1s;
+}
+.input-group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.input-item input {
+    font-size: 18px;
+    border: solid rgba(0, 0, 0, 0.644) 1px;
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+
+.input-item input:hover{
+    background-color: rgb(223, 223, 223);
+}
+
+
+#icon {
+    align-self: flex-end;
+    position: fixed;
+    margin-top: 1.6rem;
+    margin-right: 1rem;
+    background: url('img/show.png');
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+#icon.hide {
+    background: url('img/hide.png');
+    background-size: cover;
+}
+
+form .btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form .btn button {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 15px 20px;
+}
+
+
+/* STYLE DA LISTA */
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-x: hidden;
+    
+}
+
+section h1 {
+    font-size: 35px;
+    animation: show 1s;
+}
+
+
+
+.box-table{
+    height: 60vh;
+    overflow-y: scroll;
+}
+
+table {
+    max-width: 100vw;
+    background-color: rgb(46, 45, 45);
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: white;
+}
+
+.table {
+    width: 100%;
+    border: 1px solid rgba(241, 241, 241, 0.63);
+    border-collapse: separate;
+    *border-collapse: collapse;
+    border-left: 0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.table th,
+.table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid rgba(241, 241, 241, 0.63);
+    border-left: 1px solid rgba(241, 241, 241, 0.63);
+}
+
+.table tr:hover {
+    background-color:rgb(27, 27, 27); ;
+}
+.action {
+    display: flex;
+    gap: 0.5rem;
+}
+
+table button:first-child {
+    margin-top: 0;
+    border: none;
+    background-color: rgb(58, 124, 199);
+    padding: 10px 15px;
+    border-radius: 3px;
+    color: white;
+}
+
+table button:first-child:hover {
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-image: url('img/editar-texto.png');
+}
+
+table button:last-child {
+    margin-top: 0;
+    border: none;
+    background-color: rgb(197, 22, 22);
+    padding: 10px 15px;
+    border-radius: 3px;
+    color: white;
+}
+
+table button:last-child:hover {
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-image: url('img/remover.png');
+}
+
+/* Small Sizes */
+@media (max-width: 920px) {
+
+    table {
+        max-width: 80vw;
+    }
+
+
+    /* Responsive Table */
+    .table-responsive {
+        display: block;
+        position: relative;
+        width: 100%;
+    }
+
+    .table-responsive thead,
+    .table-responsive tbody,
+    .table-responsive th,
+    .table-responsive td,
+    .table-responsive tr {
+        display: block;
+    }
+
+
+    .table-responsive thead {
+        float: left;
+    }
+
+    .table-responsive tbody {
+        width: auto;
+        position: relative;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+
+    .table-responsive tbody tr {
+        display: inline-block;
+    }
+
+}
+
+@keyframes show {
+    0%{
+        translate: 50px;
+        opacity: 0.1;
+    }
+    50%{
+        pacity: 0.6;
+    }
+    100%{
+        translate: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes appear {
+    0%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
